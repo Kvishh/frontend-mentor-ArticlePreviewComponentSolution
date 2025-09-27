@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+body{
+    min-width: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: hsl(213, 73%, 94%);
+}
+main{
+    max-width: 100%;
+    width: 670px;
+    font-family: Manrope, sans-serif;
+    display: flex;
+    height: 240px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 15px 60px -40px hsl(210, 8%, 29%);
+}
+.left-container{
+    width: 700px;
+    overflow: hidden;
+}
+.left-container img{
+    width: 300px;
+}
+.right-container{
+    padding: 1.4rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.right-container h1{
+    font-size: 18px;
+    color: hsl(217, 19%, 35%);
+    font-weight: 800;
+}
+.right-container h1+p{
+    font-size: 13px;
+    color: hsl(217, 19%, 35%);
+}
+.profile-container{
+    display: flex;
+    align-items: center;
+}
+#avatar{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: .8rem;
+}
+#name{
+    font-size: 10px;
+    font-weight: 800;
+    color: hsl(217, 19%, 35%);
+}
+#date{
+    color: hsl(212, 23%, 69%);
+    font-weight: 500;
+    font-size: 10px;
+}
+.share-container{
+    margin-left: auto;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.share-container img{
+    width: 13px;
+}
+
+
+@media screen and (width<=570px) {
+    main{
+        flex-direction: column;
+        height: unset;
+        width: 300px;
+    }
+    .left-container{
+        width: unset;
+        height: 200px;
+        overflow: hidden;
+    }
+    .right-container{
+        padding: 1.4rem 1.8rem;
+    }
+    .right-container h1{
+        margin-bottom: .6rem;
+    }
+    .right-container h1+p{
+        margin-bottom: 1.5rem;
+    }
+}
