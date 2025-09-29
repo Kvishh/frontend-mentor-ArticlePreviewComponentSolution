@@ -2,24 +2,26 @@
 
 *,
 *::before,
-*::after{
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html{
+html {
     height: 100%;
 }
-body{
-    min-width: 350px;
+
+body {
+    min-width: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
     background-color: hsl(213, 73%, 94%);
 }
-main{
+
+main {
     max-width: 100%;
     width: 670px;
     font-family: Manrope, sans-serif;
@@ -27,53 +29,63 @@ main{
     height: 240px;
     background-color: white;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0px 15px 60px -40px hsl(210, 8%, 29%);
 }
-.left-container{
+
+.left-container {
     width: 700px;
     overflow: hidden;
+    border-radius: 10px;
 }
-.left-container img{
+
+.left-container img {
     width: 300px;
 }
-.right-container{
+
+.right-container {
     padding: 1.4rem 2.5rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow: hidden;
 }
-.right-container h1{
+
+.right-container h1 {
     font-size: 18px;
     color: hsl(217, 19%, 35%);
     font-weight: 800;
 }
-.right-container h1+p{
+
+.right-container h1+p {
     font-size: 13px;
     color: hsl(217, 19%, 35%);
 }
-.profile-container{
+
+.profile-container {
     display: flex;
     align-items: center;
+    position: relative;
 }
-#avatar{
+
+#avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: .8rem;
 }
-#name{
+
+#name {
     font-size: 10px;
     font-weight: 800;
     color: hsl(217, 19%, 35%);
 }
-#date{
+
+#date {
     color: hsl(212, 23%, 69%);
     font-weight: 500;
     font-size: 10px;
 }
-.share-container{
+
+.share-container {
     margin-left: auto;
     width: 25px;
     height: 25px;
@@ -82,30 +94,129 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 150ms ease-in-out;
 }
-.share-container img{
+.share-container:hover{
+    background-color: hsl(214, 24%, 81%);
+    cursor: pointer;
+}
+
+.share-container img {
     width: 13px;
+}
+
+.pop-up-bar{
+    position: absolute;
+    top: -62px;
+    right: -89px;
+    z-index: 999;
+}
+.pop-up-container {
+    background-color: hsl(217, 19%, 35%);
+    width: 200px;
+    height: 3rem;
+    border-radius: 7px;
+    padding: 0px 1.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pop-up-container::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 91px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent blue transparent;
+    border-width: 10px 10px 0px 10px;
+}
+.pop-up-container p {
+    text-transform: uppercase;
+    color: hsl(212, 23%, 69%);
+    font-size: .6rem;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+.pop-up-container a{
+    height: 20px;
+}
+.pop-up-container a:nth-child(3){
+    height: 17px;
+}
+.pop-up-container img:hover{
+    cursor: pointer;
+}
+.hidden{
+    position: absolute;
+    display: none;
+}
+
+.share-container-toggle{
+    background-color: hsl(217, 19%, 35%);
+}
+.share-icon-toggle{
+    background-color: transparent;
 }
 
 
 @media screen and (width<=570px) {
-    main{
+    main {
         flex-direction: column;
         height: unset;
         width: 300px;
     }
-    .left-container{
+
+    .left-container {
         width: unset;
         height: 200px;
         overflow: hidden;
     }
-    .right-container{
-        padding: 1.4rem 1.8rem;
+
+    .right-container {
+        padding: 1rem 1.8rem;
     }
-    .right-container h1{
+
+    .right-container h1 {
         margin-bottom: .6rem;
+        font-size: 15px;
     }
-    .right-container h1+p{
+
+    .right-container h1+p {
         margin-bottom: 1.5rem;
+    }
+
+    .share-container{
+        z-index: 999;
+    }
+
+    .pop-up-bar{
+        top: -13px;
+        right: -29px;
+    }
+    .pop-up-container{
+        height: 59px;
+        z-index: 1;
+        width: 300px;
+        max-width: 100%;
+        top: 510px;
+        left: 134px;
+        border-radius: 0px 0px 10px 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 1rem;
+    }
+    .pop-up-container p{
+        margin-left: 1rem;
+    }
+    .pop-up-container img{
+        object-fit: contain;
+    }
+    .pop-up-container::after{
+        display: none;
     }
 }
