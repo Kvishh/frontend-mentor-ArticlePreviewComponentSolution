@@ -1,3 +1,5 @@
+"use strict"
+
 const shareButton = document.querySelector(".share-container");
 shareButton.classList.toggle("share-container-toggle");
 const shareIcon = document.querySelector(".share-icon-toggle");
